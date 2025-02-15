@@ -1,17 +1,17 @@
+# Use an official Python runtime as a parent image
+FROM python:3.10-slim
 
-FROM python:3.9
+# Set the working directory in the container
+WORKDIR /app
 
+# Copy the requirements file into the container
+COPY requirements.txt .
 
-WORKDIR /code
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the rest of the application code
+COPY . .
 
-COPY ./requirements.txt /code/requirements.txt
-
-
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
-
-COPY ./app /code/app
-
-
-CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+# Command to run the application
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]

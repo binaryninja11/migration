@@ -3,14 +3,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.staticfiles import StaticFiles
 
-from views import router
+from app.views import router
 
 app = FastAPI()
 
 
 # ✅ Serve static files at both "/media" and "/test/media"
-app.mount("/media", StaticFiles(directory="media"), name="media")
-app.mount("/test/media", StaticFiles(directory="media"), name="test-media")  # Second mount
+app.mount("/media", StaticFiles(directory="app/media"), name="media")
+app.mount("/test/media", StaticFiles(directory="app/media"), name="test-media")  # Second mount
 
 origins = [
     "http://localhost",
@@ -41,6 +41,6 @@ async def root():
 
 if __name__ == '__main__':
 
-    # uvicorn.run("main:apppe", reload=True, host="0.0.0.0")
-    uvicorn.run("main:app", reload=True)
+    uvicorn.run("main:apppe", reload=True, host="0.0.0.0")
+    # uvicorn.run("main:app", reload=True)
 
