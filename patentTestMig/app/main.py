@@ -22,6 +22,7 @@ origins = [
     "http://10.10.3.71",  
     "http://localhost:80", 
     "https://migrationv-v1-0.onrender.com",  # server 
+    "https://migrationagent.netlify.app"
 ]
 # http://10.10.3.71:8000
 app.add_middleware(
