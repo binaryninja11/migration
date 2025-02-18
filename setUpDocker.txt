@@ -4,7 +4,7 @@ docker stop mycontainer
 docker rm mycontainer
 docker rmi myimage
 
-docker run -d --name mycontainer -p 8002:8001 myimage
+docker run -d --name mycontainer -p 8001:8001 myimage
 docker logs mycontainer
 docker ps
 
