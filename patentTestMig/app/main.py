@@ -18,8 +18,7 @@ origins = [
     "http://localhost:3000",  # Common React dev server port
     "http://localhost:8000",
     "http://localhost:8001",
-    "http://localhost:5173",
-    "http://localhost:5175",  
+    "http://localhost:5177",  
     "http://10.10.3.71",  
     "http://localhost:80", 
     "https://migrationv-v1-0.onrender.com",  # server 
