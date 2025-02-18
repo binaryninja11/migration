@@ -57,17 +57,16 @@ async def get_file(file_name: str):
     return JSONResponse(content={"error": "File not found"}, status_code=404)
 
 # ✅ Get Answer Based on Version ID
-@router.get("/answer/{versionId}", response_model=schema.AnswerResponse)
+@router.get("/answer/{versionId}")
 async def get_answer(
     versionId: int,
-    date: schema.DateGet,
     db: Session = Depends(get_db)
 ):
     if versionId not in range(1, 6):  # Ensure valid range (1-5)
         raise HTTPException(status_code=404, detail="version is not found")
 
     try:
-        date_obj = datetime.strptime(date.date, "%d.%m.%Y %H:%M:%S")  # Convert from string
+        date_obj = datetime.now()  # Current timestamp
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid date format. Use DD.MM.YYYY HH:MM:SS")
 
