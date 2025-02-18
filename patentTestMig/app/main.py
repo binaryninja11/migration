@@ -17,6 +17,7 @@ origins = [
     "http://localhost:8080",
     "http://localhost:3000",  # Common React dev server port
     "http://localhost:8000",
+    "http://localhost:8001",
     "http://localhost:5173",  
     "http://10.10.3.71",  
     "http://localhost:80", 
