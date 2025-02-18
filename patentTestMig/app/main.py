@@ -16,8 +16,11 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:3000",  # Common React dev server port
-    "http://localhost:5173",  # Add this line for Vite
-    "http://10.10.3.71",  # Add this line for your backend IP
+    "http://localhost:8000",
+    "http://localhost:5173",  
+    "http://10.10.3.71",  
+    "http://localhost:80", 
+    "https://migrationv-v1-0.onrender.com",  # server 
 ]
 # http://10.10.3.71:8000
 app.add_middleware(
